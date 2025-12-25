@@ -40,6 +40,7 @@ def api_base_url(request):
     return JsonResponse({"api_base_url": api_url})
 
 urlpatterns = [
+    path('', api_base_url, name='home'),  # Root URL returns API base URL info
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/', views.api_root, name='api-root'),
